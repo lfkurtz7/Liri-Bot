@@ -104,7 +104,12 @@ function searchBandsInTown(band) {
 //OMDB search
 function searchOMDB(movie) {
   console.log("Searching OMDB for %s", movie)
+  if (!movie) {
+    movie = "Mr. Nobody"
+  }
   var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+
 
   axios.get(queryUrl)
     .then(function (response) {
